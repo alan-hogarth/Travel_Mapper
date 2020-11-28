@@ -21,7 +21,7 @@ def new_trip():
     return render_template("trips/new.html", users = users, city = city, country = country)
 
 @trips_blueprint.route("/trips",  methods=['POST'])
-def create_task():
+def create_trip():
     user_id = request.form['user_id']
     city_id = request.form['city_id']
     country_id = request.form['country_id']
@@ -31,4 +31,5 @@ def create_task():
     country = country_repository.select(country_id)
     visit = Visit(user, city, country, to_visit)
     visit_repository.save(visit)
+    
     return redirect('/trips')

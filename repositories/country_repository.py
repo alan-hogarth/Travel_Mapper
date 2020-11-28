@@ -44,3 +44,36 @@ def update(country):
     sql = "UPDATE countries SET name = %s WHERE id = %s"
     values = [country.name, country.id]
     run_sql(sql, values)
+
+
+def users(country):
+    results = []
+    sql = """SELECT users.* 
+            FROM users
+            INNER JOIN visits ON users.id = visits.user_id
+            INNER JOIN countries ON countries.id = visits.country_id
+            WHERE countries.id = %s"""
+    values = [country.id]
+    sql_results = run_sql(sql, values)
+    
+    for row in sql_results:
+        user = User(row['name'], row['id'])
+        results.append(user)
+    
+    return results
+
+def cities(country):
+    results = []
+    sql ="""SELECT cities.*
+            FROM cities
+            INNER JOIN visits ON cities.id = visits.city_id
+            INNER JOIN countries ON countries.id = visits.country_id
+            WHERE countries.id = %s"""
+    values = [country.id]
+    sql_results = run_sql(sql, values)
+
+    for row in sql_results:
+        city = City(row['name'], row['id'])
+        results.append(city)
+    
+    return results

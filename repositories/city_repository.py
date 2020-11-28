@@ -44,3 +44,20 @@ def update(city):
     sql = "UPDATE cities SET name = %s WHERE id = %s"
     values = [city.name, city.id]
     run_sql(sql, values)
+
+
+def countries(city):
+    results = []
+    sql ="""SELECT countries.*
+            FROM countries
+            INNER JOIN visits ON countries.id = visits.country_id
+            INNER JOIN cities ON cities.id = visits.city_id
+            WHERE cities.id = %s"""
+    values = [city.id]
+    sql_results = run_sql(sql, values)
+
+    for row in sql_results:
+        country = Country(row['name'], row['id'])
+        results.append(country)
+    
+    return results

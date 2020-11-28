@@ -2,10 +2,19 @@
 
 {% block content %}
 <h1>Countries Checklist</h1>
+<h3>Select Country to see available cities</h3>
 
 <ul>
     {% for country in countries %}
     <li><a href="/countries/ {{country.id}}">{{country.name}}</a></li>
+    <!-- {% if country.to_visit == True %}
+    <li>"On the list"</li>
+    {% else %}
+    <li>"Been there"</li>
+    {% endif %} -->
+    {% endfor %}
+    {% for city in cities %}
+    <li><a href="/countries/ {{country.id}}">{{city.name}}</a></li>
     {% endfor %}
 </ul>
 
