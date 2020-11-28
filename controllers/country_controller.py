@@ -15,10 +15,10 @@ def countries():
 def show_city(id):
     country = country_repository.select(id)
     country_cities = country_repository.cities(country)
-    return render_template("countries/index.html", country=country, cities=country_cities)
+    return render_template("countries/show.html", country=country, cities=country_cities)
 
 @countries_blueprint.route("/countries/<id>")
-def show(id):
+def show_user(id):
     country = country_repository.select(id)
     country_users = country_repository.users(country)
     return render_template("countries/show.html", country=country, users=country_users)

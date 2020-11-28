@@ -7,9 +7,11 @@
     {% for city in cities %}
     <li><a href="/cities/ {{city.id}}">{{city.name}}</a></li>
     {% endfor %}
-    {% for country in countries %}
-    <li><a href="cities/ {{city.id}}">{{country.name}}</a></li>
-    {% endfor %}
+    
 </ul>
 
 {% endblock %}
+
+<!-- {% for country in countries %}
+    <li><a href="cities/ {{city.id}}">{{country.name}}</a></li>
+    {% endfor %} -->

@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{country.name}} </h1>
+<h1> {{city.name}} </h1>
 
-<h3>Available City:</h3>
+<h3>Visited by:</h3>
 
     <ul>
-        {% for city in cities %}
+        {% for user in users %}
         <li>
-            {{ city.name }}
+            {{ user.name }}
         </li>
         {% endfor %}
     </ul>
