@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Trips</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/trips/new">New trip</a>
+</p>
+
+<ul>
+  {% for trip in trips %}
+  <li>
+  <p>{{ trip.user.name }} - {{ trip.country.name }} - {{ trip.city.name }}</p>
+  <p>"{{trip.to_visit}}"</p>
+    <p>
+      <form action="/trips/{{ trip.id }}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

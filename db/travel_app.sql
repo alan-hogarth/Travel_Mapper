@@ -15,7 +15,7 @@ CREATE TABLE cities (
 
 CREATE TABLE countries (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
 );
 
 CREATE TABLE visits (

@@ -5,7 +5,7 @@ from models.visit import Visit
 from models.user import User
 
 def save(country):
-    sql = "INSERT INTO countries (name)  VALUES ( %s, %s ) RETURNING id"
+    sql = "INSERT INTO countries (name)  VALUES ( %s ) RETURNING id"
     values = [country.name]
     results = run_sql( sql, values )
     country.id = results[0]['id']
@@ -39,3 +39,8 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM countries"
     run_sql(sql)
+
+def update(country):
+    sql = "UPDATE countries SET name = %s WHERE id = %s"
+    values = [country.name, country.id]
+    run_sql(sql, values)
