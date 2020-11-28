@@ -33,3 +33,8 @@ def create_trip():
     visit_repository.save(visit)
     
     return redirect('/trips')
+
+@trips_blueprint.route("/trips/<id>/delete", methods=["POST"])
+def delete_trip(id):
+    visit_repository.delete(id)
+    return redirect("/trips")

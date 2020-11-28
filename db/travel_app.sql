@@ -23,5 +23,5 @@ CREATE TABLE visits (
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
   city_id INT REFERENCES cities(id) ON DELETE CASCADE,
   country_id INT REFERENCES countries(id) ON DELETE CASCADE,
-  to_visit TEXT
+  to_visit BOOLEAN
 );

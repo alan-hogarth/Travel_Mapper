@@ -8,10 +8,11 @@
     {% for country in countries %}
     <li><a href="/countries/ {{country.id}}">{{country.name}}</a></li>
     <!-- {% if country.to_visit == True %}
-    <li>"On the list"</li>
+    <p>"On the list"</p>
     {% else %}
-    <li>"Been there"</li>
+    <p>"Been there"</p>
     {% endif %} -->
+    
     {% endfor %}
 </ul>
 

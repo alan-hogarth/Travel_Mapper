@@ -41,13 +41,13 @@ country_repository.save(country_2)
 country_3 = Country("Italy")
 country_repository.save(country_3)
 
-visit_1 = Visit(user_1, city_2, country_2, "On the bucket list!" )
+visit_1 = Visit(user_1, city_2, country_2, True)
 visit_repository.save(visit_1)
 
-visit_2 = Visit(user_2, city_1, country_1, "Checked off the bucket list")
+visit_2 = Visit(user_2, city_1, country_1, True)
 visit_repository.save(visit_2)
 
-visit_3 = Visit(user_3, city_3, country_3, "On the bucket list!")
+visit_3 = Visit(user_3, city_3, country_3, False)
 visit_repository.save(visit_3)
 
 pdb.set_trace()

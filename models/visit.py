@@ -1,6 +1,6 @@
 class Visit:
 
-    def __init__(self, user, city, country, to_visit, id = None):
+    def __init__(self, user, city, country, to_visit = False, id = None):
         self.user = user
         self.city = city
         self.country = country

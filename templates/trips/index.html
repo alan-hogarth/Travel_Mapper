@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Trips</h1>
+<h1>Trip Planner</h1>
 
 <p class="btn--wrapper">
   <a class="btn btn--action" href="/trips/new">New trip</a>
@@ -10,8 +10,15 @@
 <ul>
   {% for trip in trips %}
   <li>
-  <p>{{ trip.user.name }} - {{ trip.country.name }} - {{ trip.city.name }}</p>
-  <p>"{{trip.to_visit}}"</p>
+  <p>Country: {{ trip.country.name }}</p> 
+  <p>City: {{ trip.city.name }}</p>
+  <p></p>
+  <p>Trip status:</p>
+  <p>{% if trip.to_visit %}  
+    👍
+    {% else %}
+    👎
+    {% endif %}</p>
     <p>
       <form action="/trips/{{ trip.id }}/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
