@@ -19,21 +19,18 @@ def trips():
 
 @trips_blueprint.route("/trips/new", methods=['GET'])
 def new_trip():
-    users = user_repository.select_all()
     city = city_repository.select_all()
     country = country_repository.select_all()
-    return render_template("trips/new.html", users = users, city = city, country = country)
+    return render_template("trips/new.html", city = city, country = country)
 
 # @trips_blueprint.route("/trips", methods=['POST'])
 # def create_trip():
-#     user = request.form["name"]
-#     country = request.form["country"]
 #     city = request.form["city"]
+#     country = request.form["country"]
 #     visit = request.form["to_visit"]
-#     new_user = User(user)
-#     new_country = Country(country) 
 #     new_city = City(city)
-#     trip = Visit(new_user, new_country, new_city, visit)
+#     new_country = Country(country) 
+#     trip = Visit(new_city, new_country, visit)
 #     visit_repository.save(trip)
 #     return redirect("/trips")
     

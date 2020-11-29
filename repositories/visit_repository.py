@@ -9,8 +9,8 @@ import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 
 def save(visit):
-    sql = "INSERT INTO visits ( user_id, city_id, country_id, to_visit ) VALUES ( %s, %s, %s, %s ) RETURNING id"
-    values = [visit.user.id, visit.city.id, visit.country.id, visit.to_visit]
+    sql = "INSERT INTO visits (city_id, country_id, to_visit ) VALUES ( %s, %s, %s ) RETURNING id"
+    values = [visit.city.id, visit.country.id, visit.to_visit]
     results = run_sql( sql, values )
     visit.id = results[0]['id']
     return visit
@@ -22,10 +22,9 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        user = user_repository.select(row['user_id'])
         city = city_repository.select(row['city_id'])
         country = country_repository.select(row['country_id'])
-        visit = Visit(user, city, country, row['to_visit'], row['id'])
+        visit = Visit(city, country, row['to_visit'], row['id'])
         visits.append(visit)
     return visits
 
