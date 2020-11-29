@@ -24,15 +24,16 @@ def new_trip():
     country = country_repository.select_all()
     return render_template("trips/new.html", users = users, city = city, country = country)
 
-# @trips_blueprint.route("/trips",  methods=['POST'])
+# @trips_blueprint.route("/trips", methods=['POST'])
 # def create_trip():
 #     user = request.form["name"]
 #     country = request.form["country"]
 #     city = request.form["city"]
+#     visit = request.form["to_visit"]
 #     new_user = User(user)
 #     new_country = Country(country) 
 #     new_city = City(city)
-#     trip = Visit(new_user, new_country, new_city)
+#     trip = Visit(new_user, new_country, new_city, visit)
 #     visit_repository.save(trip)
 #     return redirect("/trips")
     
