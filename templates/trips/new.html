@@ -1,37 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h1>Add a Trip</h1>
-
-    <!-- form -->
-
-    <form action="/trips" method="post">
-    <label for="user_id">Add a user:</label>
-    <select name="user_id" id="user">
-        {% for user in users %}
-        <option value="{{ user.id }}">{{ user.name }}</option>
-        {% endfor %}
-        </select> 
-  
-    <label for="city">Select a City:</label>
-        <select name="city_id" id="city">
-        {% for city in cities %}
-        <option value="{{ city.id }}">{{ city.name }}</option>
-        {% endfor %}
-        </select>
-
-    <label for="country">Select a Country:</label>
-        <select name="country_id" id="country">
-        {% for country in countries %}
-        <option value="{{ country.id }}">{{ country.name }}</option>
-        {% endfor %}
-        </select>
-  
-
-    <label for="to_visit">Visit Status</label>
-    <textarea name="to_visit" id="to_visit" cols="30" rows="10"></textarea>
-    <input class="btn btn--action" type='submit' value="to_visit">
-    </form> 
+<!-- 
+<form action="/trips" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+    </div>
+    <div>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country">
+        <input type="submit">
+    </div>
+</form> -->
+ 
+    
 
 {% endblock %}
 

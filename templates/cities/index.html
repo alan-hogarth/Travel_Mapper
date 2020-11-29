@@ -8,8 +8,17 @@
     {% for city in cities %}
     <li><a href="/cities/ {{city.id}}">{{city.name}}</a></li>
     {% endfor %}
-    
 </ul>
+
+<h3>Add a New City:</h3>
+
+<form action="/cities" method="POST">
+    <div>
+        <label for="city">Name:</label>
+        <input type="text" id="city" name="city">
+        <input type="submit">
+    </div>
+</form>
 
 {% endblock %}
 
