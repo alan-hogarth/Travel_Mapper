@@ -19,9 +19,10 @@ def trips():
 
 @trips_blueprint.route("/trips/new", methods=['GET'])
 def new_trip():
-    city = city_repository.select_all()
-    country = country_repository.select_all()
-    return render_template("trips/new.html", city = city, country = country)
+    cities = city_repository.select_all()
+    countries = country_repository.select_all()
+    return render_template("trips/new.html", cities = cities, countries = countries)
+
 
 # @trips_blueprint.route("/trips", methods=['POST'])
 # def create_trip():
