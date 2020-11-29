@@ -3,25 +3,40 @@
 {% block content %}
 <h1>Cities Checklist</h1>
 
-<h3>Select for visitors:</h3>
-<ul>
-    {% for city in cities %}
-    <li><a href="/cities/ {{city.id}}">{{city.name}}</a></li>
-    {% endfor %}
-</ul>
 
+
+<p class="btn--wrapper">
+    <a class="btn btn--action" href="/cities/new">Add New City</a>
+  </p>
+
+<h3>Select for visitors:</h3>
+
+<section>
+    <ul>
+        {% for city in cities %}
+        <li><a href="/cities/ {{ city.id }}"> {{city.name}} </a></li>
+     </ul>
+    <p>
+     <form action="/cities/{{ city.id }}/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete"/>
+    </form>
+    </p>
+        {% endfor %}
+</section>
+<!-- <section>
 <h3>Add a New City:</h3>
 
-<form action="/cities" method="POST">
-    <div>
-        <label for="city">Name:</label>
-        <input type="text" id="city" name="city">
-        <input type="submit">
-    </div>
-</form>
+    <p>
+    <form action="/cities" method="POST">
+        <div>
+            <label for="city">Name:</label>
+            <input type="text" id="city" name="city">
+            <input type="submit">
+        </div>
+    </form>
+    </p>
+</section> -->
+    
 
 {% endblock %}
 
-<!-- {% for country in countries %}
-    <li><a href="cities/ {{city.id}}">{{country.name}}</a></li>
-    {% endfor %} -->
