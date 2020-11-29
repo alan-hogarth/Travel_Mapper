@@ -3,11 +3,8 @@
 {% block content %}
 <h1>Countries Checklist</h1>
 
-    
-    <p><a href="/countries/edit">Update Country</a></p>
-   
 
-<h3>Select a Country to see city travel options</h3>
+<h3>Select a Country to Update and to see city travel options</h3>
     <ul>
         {% for country in countries %}
         <li><a href="/countries/ {{country.id}}">{{country.name}}</a></li>
