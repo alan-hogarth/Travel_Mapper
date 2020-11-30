@@ -15,8 +15,8 @@ def cities():
 @cities_blueprint.route("/cities/<id>")
 def show(id):
     city = city_repository.select(id)
-    city_users = city_repository.users(city)
-    return render_template("cities/show.html", city=city, users=city_users)
+    city_sights = city_repository.sights(city)
+    return render_template("cities/show.html", city=city, sights=city_sights)
 
 # location for creating new city
 @cities_blueprint.route("/cities/new", methods=['GET'])

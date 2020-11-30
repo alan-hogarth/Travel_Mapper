@@ -1,4 +1,4 @@
-class User:
+class Sight:
 
     def __init__(self, name, id = None):
         self.name = name

@@ -2,15 +2,15 @@ from db.run_sql import run_sql
 from models.city import City
 from models.country import Country
 from models.visit import Visit
-from models.user import User
+from models.sight import Sight
 
-import repositories.user_repository as user_repository
+import repositories.sight_repository as sight_repository
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 
 def save(visit):
-    sql = "INSERT INTO visits (city_id, country_id, to_visit) VALUES ( %s, %s, %s ) RETURNING id"
-    values = [visit.city.id, visit.country.id, visit.to_visit]
+    sql = "INSERT INTO visits (city_id, country_id, sight_id, to_visit) VALUES ( %s, %s, %s, %s ) RETURNING id"
+    values = [visit.city.id, visit.country.id, visit.sight.id, visit.to_visit]
     results = run_sql( sql, values )
     visit.id = results[0]['id']
     return visit
@@ -24,7 +24,8 @@ def select_all():
     for row in results:
         city = city_repository.select(row['city_id'])
         country = country_repository.select(row['country_id'])
-        visit = Visit(city, country, row['to_visit'], row['id'])
+        sight = sight_repository.select(row["sight_id"])
+        visit = Visit(city, country, sight, row['to_visit'], row['id'])
         visits.append(visit)
     return visits
 

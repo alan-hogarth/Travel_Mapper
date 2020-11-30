@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.city import City
 from models.country import Country
 from models.visit import Visit
-from models.user import User
+from models.sight import Sight
 
 def save(city):
     sql = "INSERT INTO cities( name ) VALUES ( %s ) RETURNING id"
@@ -45,19 +45,19 @@ def update(city):
     values = [city.name, city.id]
     run_sql(sql, values)
 
-def users(city):
+def sights(city):
     results = []
-    sql = """SELECT users.* 
-            FROM users
-            INNER JOIN visits ON users.id = visits.user_id
+    sql = """SELECT sights.* 
+            FROM sights
+            INNER JOIN visits ON sights.id = visits.sight_id
             INNER JOIN cities ON cities.id = visits.city_id
             WHERE cities.id = %s"""
     values = [city.id]
     sql_results = run_sql(sql, values)
     
     for row in sql_results:
-        user = User(row['name'], row['id'])
-        results.append(user)
+        sight = Sight(row['name'], row['id'])
+        results.append(sight)
     
     return results
 
