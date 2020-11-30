@@ -4,11 +4,16 @@ body {
     background-size: cover;
 }
 
+header {
+    background-color: rgb(117, 166, 179);
+    border-radius: 15px;
+}
+
 nav ul li {
     display: inline;
-    background-color: rgb(172, 170, 170);
-    background-blend-mode: darken;
-    border-radius: 15px;
+    /* background-color: rgb(172, 170, 170); */
+    /* background-blend-mode: darken; */
+    border-radius: 10px;
 }
 
 li {
@@ -18,6 +23,7 @@ li {
 
 a {
     color: black;
+    text-decoration: none;
 }
 
 h1, h2, h3 {
@@ -26,9 +32,20 @@ h1, h2, h3 {
 
 h1 {
     background-blend-mode: inherit;
+    text-align: left;
+    color: rgb(248, 220, 167);
 }
 
 .title_page {
     font-size: 25px;
-    text-align: left;
+    text-align: left;    
+}
+
+.btn--wrapper {
+    display: inline;
+    background-color: rgb(172, 170, 170);
+    background-blend-mode: darken;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 5px;
 }
