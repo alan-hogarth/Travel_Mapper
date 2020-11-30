@@ -9,7 +9,7 @@ import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 
 def save(visit):
-    sql = "INSERT INTO visits (city_id, country_id, to_visit ) VALUES ( %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO visits (city_id, country_id, to_visit) VALUES ( %s, %s, %s ) RETURNING id"
     values = [visit.city.id, visit.country.id, visit.to_visit]
     results = run_sql( sql, values )
     visit.id = results[0]['id']

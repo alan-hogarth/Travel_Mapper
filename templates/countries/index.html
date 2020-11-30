@@ -3,15 +3,34 @@
 {% block content %}
 <h1>Countries Checklist</h1>
 
-
 <h3>Select a Country to Update and to see city travel options</h3>
-    <ul>
-        {% for country in countries %}
-        <li><a href="/countries/ {{country.id}}">{{country.name}}</a></li>
+
+    <section>
+        <p class="btn--wrapper"></p>    
+        <ul>
+            {% for country in countries %}
+            <li><a href="/countries/ {{country.id}}">{{country.name}}</a></li>
+            <p>
+                <form action="/countries/{{ country.id }}/delete" method="POST">
+                <input class="btn btn--danger" type="submit" value="delete"/>
+            </form>
+            </p>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h3>Add a New Country:</h3>
         
-        
-        {% endfor %}
-    </ul>
+            <p>
+            <form action="/countries" method="POST">
+                <div>
+                    <label for="country">Name:</label>
+                    <input type="text" id="country" name="country">
+                    <input type="submit">
+                </div>
+            </form>
+            </p>
+    </section> 
 
 {% endblock %}
 

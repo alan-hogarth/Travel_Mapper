@@ -28,10 +28,10 @@ def new_trip():
 # def create_trip():
 #     city = request.form["city"]
 #     country = request.form["country"]
-#     visit = request.form["to_visit"]
+#     to_visit = request.form["to_visit"]
 #     new_city = City(city)
 #     new_country = Country(country) 
-#     trip = Visit(new_city, new_country, visit)
+#     trip = Visit(new_city, to_visit, new_country)
 #     visit_repository.save(trip)
 #     return redirect("/trips")
     
