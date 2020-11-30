@@ -39,3 +39,20 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM sights"
     run_sql(sql)
+
+
+def cities(sight):
+    results = []
+    sql = """SELECT cities.* 
+            FROM cities
+            INNER JOIN visits ON cities.id = visits.city_id
+            INNER JOIN sights ON sights.id = visits.sight_id
+            WHERE sights.id = %s"""
+    values = [sight.id]
+    sql_results = run_sql(sql, values)
+    
+    for row in sql_results:
+        city = City(row['name'], row['id'])
+        results.append(city)
+    
+    return results

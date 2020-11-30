@@ -22,8 +22,8 @@ def show_country(id):
 @countries_blueprint.route("/countries/<id>")
 def show_user(id):
     country = country_repository.select(id)
-    country_users = country_repository.users(country)
-    return render_template("countries/show.html", country=country, users=country_users)
+    country_sights = country_repository.sights(country)
+    return render_template("countries/show.html", country=country, sights=country_sights)
 
  # form for creating new city
 @countries_blueprint.route("/countries", methods=["POST"])

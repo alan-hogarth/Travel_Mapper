@@ -46,7 +46,7 @@ def update(country):
     run_sql(sql, values)
 
 
-def users(country):
+def sights(country):
     results = []
     sql = """SELECT sights.* 
             FROM sights
