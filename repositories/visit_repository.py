@@ -3,6 +3,8 @@ from models.city import City
 from models.country import Country
 from models.visit import Visit
 from models.sight import Sight
+import requests
+import configparser
 
 import repositories.sight_repository as sight_repository
 import repositories.city_repository as city_repository
@@ -37,3 +39,14 @@ def delete(id):
     sql = "DELETE FROM visits WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+
+def get_api_key():
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    return config['OPENWEATHERMAP']['api']
+
+def get_weather_results(city_name, api_key):
+    api_url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric'.format(city_name, api_key)
+    r = requests.get(api_url)
+    return r.json()

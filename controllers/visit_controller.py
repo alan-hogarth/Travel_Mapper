@@ -41,4 +41,20 @@ def delete_trip(id):
     return redirect("/trips")
 
 
+@trips_blueprint.route('/trips', methods=['POST'])
+def render_results():
+    city_name = request.form['city']
 
+    api_key = visit_repository.get_api_key()
+    data = visit_repository.get_weather_results(city_name, api_key)   
+   
+    temp = "{}".format(data["main"]["temp"]) 
+    feels_like = "{}".format(data["main"]["feels_like"])
+    weather = data["weather"][0]["main"]
+    location = data["name"]
+    wind_speed = data["wind"]["speed"]
+   
+
+    return render_template('trips/results.html',
+                           location=location, temp=temp,
+                           feels_like=feels_like, weather=weather, wind_speed=wind_speed)
