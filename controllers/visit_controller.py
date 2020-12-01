@@ -26,18 +26,19 @@ def new_trip():
     return render_template("trips/new.html", cities = cities, countries = countries, sights = sights, trips=trips)
 
 
-# @trips_blueprint.route("/trips", methods=['POST'])
-# def create_trip():
-#     city = request.form["city"]
-#     country = request.form["country"]
-#     sight = request.form["sight"]
-#     to_visit = request.form["to_visit"]
-#     new_city = City(city)
-#     new_country = Country(country)
-#     new_sight = Sight(sight)
-#     trip = Visit(new_city, new_country, new_sight, to_visit)
-#     visit_repository.save(trip)
-#     return redirect("/trips")
+@trips_blueprint.route("/trips", methods=['POST'])
+def create_trip():
+    city_id = request.form["city_id"]
+    country_id = request.form["country_id"]
+    sight_id = request.form["sight_id"]
+    to_visit = request.form["to_visit"]
+    new_city = City("name", city_id)
+    new_country = Country("country", country_id)
+    new_sight = Sight("sight", sight_id)
+    trip = Visit(new_city, new_country, new_sight, to_visit)
+    visit_repository.save(trip)
+    import pdb; pdb.set_trace()
+    return redirect("/trips")
     
 @trips_blueprint.route("/trips/<id>/delete", methods=["POST"])
 def delete_trip(id):

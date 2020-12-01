@@ -5,22 +5,22 @@
 <h1>Add a Trip</h1>
     <section>
       <form action="/trips" method="post">
-        <label for="city">Select City:</label>
-          <select name="city" id="city">
+        <label for="city_id">Select City:</label>
+          <select name="city_id" id="city_id">
             {% for city in cities %}
             <option value="{{ city.id }}">{{ city.name }}</option>
             {% endfor %}
           </select>
       
-        <label for="country">Select Country:</label>
-        <select name="country" id="country">
+        <label for="country_id">Select Country:</label>
+        <select name="country_id" id="country_id">
           {% for country in countries %}
           <option value="{{ country.id }}">{{ country.name }}</option>
           {% endfor %}
         </select>
       
-        <label for="sight">Select Attraction:</label>
-        <select name="sight" id="sight">
+        <label for="sight_id">Select Attraction:</label>
+        <select name="sight_id" id="sight_id">
           {% for sight in sights %}
           <option value="{{ sight.id }}">{{ sight.name }}</option>
           {% endfor %}
