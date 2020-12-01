@@ -37,7 +37,6 @@ def create_trip():
     new_sight = Sight("sight", sight_id)
     trip = Visit(new_city, new_country, new_sight, to_visit)
     visit_repository.save(trip)
-    import pdb; pdb.set_trace()
     return redirect("/trips")
     
 @trips_blueprint.route("/trips/<id>/delete", methods=["POST"])
@@ -58,7 +57,7 @@ def render_results():
     weather = data["weather"][0]["main"]
     location = data["name"]
     wind_speed = data["wind"]["speed"]
-   
+    import pdb; pdb.set_trace()
 
     return render_template('trips/results.html',
                            location=location, temp=temp,

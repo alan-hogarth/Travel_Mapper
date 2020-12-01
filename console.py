@@ -17,10 +17,10 @@ visit_repository.delete_all()
 sight_1 = Sight("Beach")
 sight_repository.save(sight_1)
 
-sight_2 = Sight("Sagrada Familia")
+sight_2 = Sight("Cathedral")
 sight_repository.save(sight_2)
 
-sight_3 = Sight("Uffizi Gallery")
+sight_3 = Sight("Art Gallery")
 sight_repository.save(sight_3)
 
 city_1 = Sight("Havana")

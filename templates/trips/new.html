@@ -28,17 +28,16 @@
 
         <label for="to_visit">Select Visit Status:</label>
         <select name="to_visit" id="to_visit">
-          {% for trip in trips %}
-          <option value="{{ trip.to_visit }}">{{ trip.to_visit }}</option>
-          {% endfor %}
+          <option value="true">True</option>
+          <option value="false">False</option>
         </select>
         <input type="submit">
-
     </form>
+
   </section> 
     <section>
       <h3>Weather Dashboard</h3>
-        <h4>Check the weather for your next destination</h4>
+        <h4>Check the weather at your next destination:</h4>
             <form id="weatherForm" action="{{ url_for('trips.render_results') }}" method="post">Location (City/Town):<input id="weatherInput" type="text" name="city"><br>
                 <input id="weatherSubmit" type="submit" value="Submit">
             </form>
