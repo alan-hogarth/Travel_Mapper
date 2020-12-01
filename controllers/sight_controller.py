@@ -19,11 +19,6 @@ def show_sight(id):
     return render_template("sights/show.html", sight=sight, cities=sight_cities)
 
 
-# # location for creating new sighgt
-# @sights_blueprint.route("/sights/new", methods=['GET'])
-# def new_sight():
-#     sights = sight_repository.select_all()
-#     return render_template("sights/new.html", sights=sights)
 
     # form for creating new sight
 @sights_blueprint.route("/sights", methods=["POST"])

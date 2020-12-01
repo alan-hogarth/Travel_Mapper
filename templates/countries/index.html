@@ -6,15 +6,15 @@
 <h3>Select a Country to Update and to see city travel options</h3>
 
     <section>
-        <p class="btn--wrapper"></p>    
+        <!-- <p class="btn--wrapper"></p>     -->
         <ul>
             {% for country in countries %}
-            <li><a href="/countries/ {{country.id}}">{{country.name}}</a></li>
-            <p>
+            <li><a class="destinations" href="/countries/ {{country.id}}">{{country.name}}</a></li>
+            <li>
                 <form action="/countries/{{ country.id }}/delete" method="POST">
                 <input class="btn btn--danger" type="submit" value="delete"/>
             </form>
-            </p>
+        </li>
             {% endfor %}
         </ul>
     </section>

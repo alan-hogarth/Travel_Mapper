@@ -10,18 +10,18 @@
 
 <h3>Select for attractions:</h3>
 
-<section>
-    <ul>
-        {% for city in cities %}
-        <li><a href="/cities/ {{ city.id }}"> {{city.name}} </a></li>
-     </ul>
-    <p>
-     <form action="/cities/{{ city.id }}/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete"/>
-    </form>
-    </p>
-        {% endfor %}
-</section>
+        <section>
+            <ul class="city">
+                {% for city in cities %}
+                <li><a class="destinations" href="/cities/ {{city.id}}">{{city.name}}</a></li>
+            <li>
+                <form action="/cities/{{city.id}}/delete" method="POST">
+                    <input class="btn btn--danger" type="submit" value="delete"/>
+                </form>
+            </li>
+                {% endfor %}
+            </ul>
+        </section>
     
 {% endblock %}
 

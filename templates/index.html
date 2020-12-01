@@ -1,15 +1,15 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>Wish List Travel</h1>
+<h1>Travel Mapper</h1>
 
 <section class="title_page">
-<p>Map your Travels</p>
+<p>Plan your Next Adventure</p>
 </section>
 </section> 
-<section>
+<section class="weatherboard">
   <h3>Weather Dashboard</h3>
-    <h4>Check the weather at your next destination:</h4>
+    <h4>Check the weather at your chosen destination:</h4>
         <form id="weatherForm" action="{{ url_for('render_results') }}" method="post">Location (City/Town):<input id="weatherInput" type="text" name="city"><br>
             <input id="weatherSubmit" type="submit" value="Submit">
         </form>
