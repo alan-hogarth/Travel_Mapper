@@ -39,20 +39,43 @@ h1 {
     color: rgb(248, 220, 167);
 }
 
+h4 {
+    color: white;
+    text-align: center;
+}
+
 
 .title_page {
     font-size: 25px;
-    text-align: left;    
+    text-align: left;
+    margin: 20px;    
 }
 
 .weatherboard {
     text-align: left;
     border-style: solid;
+    margin: 20px;
     padding: 5px;
 }
 
+.weatherboard h3 {
+    color:rgb(248, 220, 167);
+    text-align: center;
+}
+
 #weatherForm {
-    color: white;
+    text-align: center;
+}
+
+#weatherSubmit {
+    display: inline;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 5px 10px;
+    background-color: rgb(117, 166, 179);
+    box-shadow: 0 3px rgb(73, 71, 71);
+    transform: translateY(4px);
+    text-align: center;
 }
 
 #weatherResults {
@@ -91,13 +114,48 @@ table {
     padding: 5px 10px;
     border-radius: 5px;
     margin-top: 5px;
+    box-shadow: 0 2px rgb(85, 118, 128);
+    transform: translateY(4px);
 }
 
+.btn--danger:hover {
+    cursor: pointer;
+}
 
 .btn--wrapper {
     display: inline;
-    background-color: rgb(172, 170, 170);
+    background-color: rgb(173, 171, 171);
     border-radius: 15px;
     margin: 20px;
     padding: 5px 10px;
+    box-shadow: 0 3px rgb(73, 71, 71);
+    transform: translateY(4px);
+}
+
+.btn--wrapper:active {
+    box-shadow: 0 3px rgb(139, 137, 137);
+    transform: translateY(4px);
+}
+
+.form-wrapper input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin-right: 50px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-wrapper input[type=submit] {
+    background-color: rgb(173, 171, 171);
+    border-radius: 15px;
+    margin: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 5px rgb(73, 71, 71);
+    transform: translateY(4px);
+}
+
+.attraction {
+    font-size: 25px;
 }
