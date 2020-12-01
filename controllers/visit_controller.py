@@ -21,17 +21,21 @@ def trips():
 def new_trip():
     cities = city_repository.select_all()
     countries = country_repository.select_all()
-    return render_template("trips/new.html", cities = cities, countries = countries)
+    sights = sight_repository.select_all()
+    trips = visit_repository.select_all()
+    return render_template("trips/new.html", cities = cities, countries = countries, sights = sights, trips=trips)
 
 
 # @trips_blueprint.route("/trips", methods=['POST'])
 # def create_trip():
 #     city = request.form["city"]
 #     country = request.form["country"]
+#     sight = request.form["sight"]
 #     to_visit = request.form["to_visit"]
 #     new_city = City(city)
-#     new_country = Country(country) 
-#     trip = Visit(new_city, to_visit, new_country)
+#     new_country = Country(country)
+#     new_sight = Sight(sight)
+#     trip = Visit(new_city, new_country, new_sight, to_visit)
 #     visit_repository.save(trip)
 #     return redirect("/trips")
     

@@ -3,64 +3,48 @@
 {% block content %}
 
 <h1>Add a Trip</h1>
-    <div>
-    <form action="/trips" method="post">
-      <label for="city">Select City:</label>
-        <select name="city" id="city">
-          {% for city in cities %}
-          <option value="{{ city.id }}">{{ city.name }}</option>
-          {% endfor %}
-        </select>
-    
-      <label for="country">Select Country:</label>
+    <section>
+      <form action="/trips" method="post">
+        <label for="city">Select City:</label>
+          <select name="city" id="city">
+            {% for city in cities %}
+            <option value="{{ city.id }}">{{ city.name }}</option>
+            {% endfor %}
+          </select>
+      
+        <label for="country">Select Country:</label>
         <select name="country" id="country">
           {% for country in countries %}
           <option value="{{ country.id }}">{{ country.name }}</option>
           {% endfor %}
         </select>
       
-      <label for="to_visit">Select Visit Status:</label>
-      <select name="to_visit" id="to_visit">
-        {% for trip in trips %}
-        <option value="{{ trip.to_visit }}">{{ trip.to_visit }}</option>
-        {% endfor %}
-      </select>
-      <input type="submit">
+        <label for="sight">Select Attraction:</label>
+        <select name="sight" id="sight">
+          {% for sight in sights %}
+          <option value="{{ sight.id }}">{{ sight.name }}</option>
+          {% endfor %}
+        </select>
+
+        <label for="to_visit">Select Visit Status:</label>
+        <select name="to_visit" id="to_visit">
+          {% for trip in trips %}
+          <option value="{{ trip.to_visit }}">{{ trip.to_visit }}</option>
+          {% endfor %}
+        </select>
+        <input type="submit">
 
     </form>
-    </div> 
-    <div>
+  </section> 
+    <section>
       <h3>Weather Dashboard</h3>
         <h4>Check the weather for your next destination</h4>
             <form id="weatherForm" action="{{ url_for('trips.render_results') }}" method="post">Location (City/Town):<input id="weatherInput" type="text" name="city"><br>
                 <input id="weatherSubmit" type="submit" value="Submit">
             </form>
 
-    </div>
+    </section>
 
 
 {% endblock %}
 
-<!-- 
-<form action="/trips" method="POST">
-    <div>
-        {% for city in cities %}
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" value="{{ city.id }}">
-        {% endfor %}
-
-        {% for country in countries %}
-        <label for="country">Country:</label>
-        <input type="text" id="country" name="country" value="{{ country.id }}">
-        <input type="submit"> 
-        {% endfor %}
-    </div>
-    <div>    
-        <label for="to_visit">Still to visit:</label>
-        <input type="radio" name="to_visit" id="to_visit" value="yes">
-        <label for="yes">Yes</label><br>
-        <input type="radio" name="to_visit" id="to_visit" value="no">
-        <label for="no">No</label>
-       
-    </div>
-</form>  -->

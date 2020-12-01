@@ -12,13 +12,13 @@
   <li>
   <p>Country: {{ trip.country.name }}</p> 
   <p>City: {{ trip.city.name }}</p>
+  <p>Attraction: {{ trip.sight.name }} </p>
   <p></p>
-  <p>Trip status:</p>
-  <p>{% if trip.to_visit %}  
+  <p>Trip status: {% if trip.to_visit %} </p>
     👍
     {% else %}
     👎
-    {% endif %}</p>
+    {% endif %}
     <p>
       <form action="/trips/{{ trip.id }}/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
