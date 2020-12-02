@@ -45,7 +45,7 @@ def update(country):
     values = [country.name, country.id]
     run_sql(sql, values)
 
-
+# get all sights for countries
 def sights(country):
     results = []
     sql = """SELECT sights.* 
@@ -62,6 +62,7 @@ def sights(country):
     
     return results
 
+# get all cities for countries
 def cities(country):
     results = []
     sql ="""SELECT cities.*

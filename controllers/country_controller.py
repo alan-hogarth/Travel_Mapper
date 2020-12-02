@@ -14,13 +14,13 @@ def countries():
     return render_template("countries/index.html", countries = countries)
 
 @countries_blueprint.route("/countries/<id>")
-def show_country(id):
+def show_country_cities(id):
     country = country_repository.select(id)
     country_cities = country_repository.cities(country)
     return render_template("countries/show.html", country=country, cities=country_cities)
 
 @countries_blueprint.route("/countries/<id>")
-def show_user(id):
+def show_country_sights(id):
     country = country_repository.select(id)
     country_sights = country_repository.sights(country)
     return render_template("countries/show.html", country=country, sights=country_sights)

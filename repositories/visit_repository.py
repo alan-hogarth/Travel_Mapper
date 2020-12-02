@@ -40,12 +40,13 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-
+# read and return api key from file
 def get_api_key():
     config = configparser.ConfigParser()
     config.read('config.ini')
     return config['OPENWEATHERMAP']['api']
 
+# return weather results in api url
 def get_weather_results(city_name, api_key):
     api_url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric'.format(city_name, api_key)
     r = requests.get(api_url)

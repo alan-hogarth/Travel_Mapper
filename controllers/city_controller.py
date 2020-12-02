@@ -13,7 +13,7 @@ def cities():
 
 # select cities by id
 @cities_blueprint.route("/cities/<id>")
-def show(id):
+def show_city_sights(id):
     city = city_repository.select(id)
     city_sights = city_repository.sights(city)
     return render_template("cities/show.html", city=city, sights=city_sights)
