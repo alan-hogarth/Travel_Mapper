@@ -152,10 +152,30 @@ table {
     border-radius: 15px;
     margin: 20px;
     padding: 5px 10px;
-    box-shadow: 0 5px rgb(73, 71, 71);
+    box-shadow: 0 2px rgb(73, 71, 71);
     transform: translateY(4px);
 }
 
 .attraction {
+    font-size: 25px;
+}
+
+.add_new {
+    text-align: left;
+    border-style: solid;
+    margin: 20px;
+    padding: 5px;
+}
+
+.add_new input[type=submit] {
+    background-color: rgb(173, 171, 171);
+    border-radius: 15px;
+    margin: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 2px rgb(73, 71, 71);
+    transform: translateY(4px);
+}
+
+.city_name {
     font-size: 25px;
 }

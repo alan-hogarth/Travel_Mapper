@@ -5,7 +5,7 @@
 
  <h3>Update a Country</h3>
 
-    <form action="/countries/{{ country.id }}" method="POST">
+    <form class="add_new" action="/countries/{{ country.id }}" method="POST">
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="{{ country.name }}">
@@ -17,7 +17,7 @@
 
     <ul>
         {% for city in cities %}
-        <li>
+        <li class="city_name">
             {{ city.name }}
         </li>
         {% endfor %}
