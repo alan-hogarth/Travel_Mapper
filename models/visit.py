@@ -6,3 +6,6 @@ class Visit:
         self.sight = sight
         self.to_visit = to_visit
         self.id = id
+    
+    def visited(self):
+        self.to_visit = True

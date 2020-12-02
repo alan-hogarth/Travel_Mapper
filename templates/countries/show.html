@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1> {{country.name}} </h1>
-
+<section>
  <h3>Update a Country</h3>
 
     <form class="add_new" action="/countries/{{ country.id }}" method="POST">
@@ -12,7 +12,8 @@
             <input type="submit">
         </div>
     </form>
-    
+</section>
+<section>
     <h3>Available City:</h3>
 
     <ul>
@@ -22,7 +23,7 @@
         </li>
         {% endfor %}
     </ul>
-
+</section>
    
 
 {% endblock %}

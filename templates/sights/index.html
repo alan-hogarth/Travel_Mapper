@@ -2,20 +2,21 @@
 
 {% block content %}
 <h1>Attractions</h1>
-
+<section>
 <h3>Select an attraction for available locations:</h3>
 
-<table>
-  <tr>
-    <th>Name</th>
-  
-  </tr>
-  {% for sight in sights %}
-  <tr>
-    <td><a class="destinations" href="/sights/{{ sight.id }}"> {{sight.name}} </a></td>
-  </tr>
-  {% endfor %}
-</table>
+  <table>
+    <tr>
+      <th>Name</th>
+    
+        </tr>
+        {% for sight in sights %}
+        <tr>
+      <td><a class="destinations" href="/sights/{{ sight.id }}"> {{sight.name}} </a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
 <section>
   <h3>Add a New Attraction:</h3>
   
